@@ -1,4 +1,9 @@
 /* Timeline custom component */
+
+:root {
+  scroll-padding-top: 70px; /* Height of your fixed navbar */
+}
+
 .timeline-card {
   position: relative;
   margin-left: 16px;
@@ -247,4 +252,48 @@ footer a:not(.nav-link) {
   background-color: #f8d7da;
   border-color: #f5c6cb;
   color: #721c24;
+}
+
+header {
+  background-color: white; /* Set header background to white */
+  padding: 10px 0; /* Add padding to header content */
+}
+
+.page-content {
+  padding-top: 15px; /* Adjust padding to match height of fixed navbar */
+}
+
+/* Custom styles here */
+header {
+  background-color: white;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  color: black !important;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: black;
+  background-image: url('../images/navbar_icon.jpg'); /* Set your image path */
+  background-size: cover; /* Ensure the image covers the button */
+  width: 30px; /* Set width of the button */
+  height: 30px; /* Set height of the button */
+}
+
+.navbar-toggler-icon {
+  display: none; /* Hide default Bootstrap icon */
+}
+
+.navbar-nav {
+  margin-left: auto; /* Align navbar items to the right */
+}
+
+.navbar-nav .nav-item {
+  margin-left: 10px; /* Adjust spacing between navbar items */
+}
+
+.navbar-nav .nav-link {
+  color: black !important; /* Ensure nav links are black */
 }
