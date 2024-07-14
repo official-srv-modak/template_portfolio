@@ -37,7 +37,7 @@
       <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" style="background-color: white;"
         color-on-scroll="400">
         <div class="container">
-          <a class="navbar-brand" href="#" rel="tooltip">Kumar Aditya</a>
+          <a id="navbrandTitle" class="navbar-brand" href="#" rel="tooltip"></a>
 
           <!-- Navbar Toggler Button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -48,11 +48,16 @@
           <!-- Navbar Links -->
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="#about" title="About" onclick="closeNavbar()">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills" onclick="closeNavbar()">Skills</a></li>
-              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience" onclick="closeNavbar()">Experience</a></li>
-              <li class="nav-item"><a class="nav-link" href="#education" title="Education" onclick="closeNavbar()">Education</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact" onclick="closeNavbar()">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about" title="About" onclick="closeNavbar()">About</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills" onclick="closeNavbar()">Skills</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience"
+                  onclick="closeNavbar()">Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="#education" title="Education"
+                  onclick="closeNavbar()">Education</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"
+                  onclick="closeNavbar()">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -175,6 +180,15 @@
         .then(response => response.json())
         .then(data => {
 
+          // Set document title
+          document.title = data.intro.name;
+
+
+          // Update text content of the navbar-brand element with id 'navbrandTitle'
+          var navbarBrand = document.getElementById('navbrandTitle');
+          if (navbarBrand) {
+            navbarBrand.textContent = data.intro.name;
+          }
 
           // Select the div element with id 'footerAddress'
           var footerAddressDiv = document.getElementById('footerAddress');
@@ -390,7 +404,8 @@
         <div class="cc-contact">
           <div class="row justify-content-center">
             <div class="col-md-10">
-              <div class="card mb-0 shadow-1-strong bg-white" data-aos="zoom-in" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <div class="card mb-0 shadow-1-strong bg-white" data-aos="zoom-in"
+                style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <div class="h4 text-center title bg-info text-white shadow-sm" style="padding: 20px 0;">Contact Me
                 </div>
                 <div class="row no-gutters">
