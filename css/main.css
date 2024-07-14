@@ -1,4 +1,9 @@
 /* Timeline custom component */
+
+:root {
+  scroll-padding-top: 70px; /* Height of your fixed navbar */
+}
+
 .timeline-card {
   position: relative;
   margin-left: 16px;
@@ -247,4 +252,13 @@ footer a:not(.nav-link) {
   background-color: #f8d7da;
   border-color: #f5c6cb;
   color: #721c24;
+}
+
+header {
+  background-color: white; /* Set header background to white */
+  padding: 10px 0; /* Add padding to header content */
+}
+
+.page-content {
+  padding-top: 15px; /* Adjust padding to match height of fixed navbar */
 }
