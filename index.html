@@ -489,33 +489,45 @@
     const contactForm = document.getElementById('contactForm');
     const responseMessage = document.getElementById('responseMessage');
 
-    contactForm.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the form from submitting normally
 
-      const formData = new FormData(contactForm);
-      const formAction = 'https://formspree.io/f/meojqpkp'; // Replace with your form action URL
-
-      fetch(formAction, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: formData
-      })
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('resume.json')
         .then(response => response.json())
-        .then(data => {
-          if (data.ok) {
-            showResponseMessage('success', 'Message received successfully.');
-            contactForm.reset(); // Optionally, clear the form after successful submission
-          } else {
-            showResponseMessage('error', 'Failed to send message. Please try again.');
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          showResponseMessage('error', 'An unexpected error occurred. Please try again later.');
-        });
+        .then(resumeData => {
+
+          contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(contactForm);
+            const formAction = resumeData.formLink;
+
+            fetch(formAction, {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json'
+              },
+              body: formData
+            })
+              .then(response => response.json())
+              .then(data => {
+                if (data.ok) {
+                  showResponseMessage('success', 'Message received successfully.');
+                  contactForm.reset(); // Optionally, clear the form after successful submission
+                } else {
+                  showResponseMessage('error', 'Failed to send message. Please try again.');
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                showResponseMessage('error', 'An unexpected error occurred. Please try again later.');
+              });
+
+          });
+
+        }).catch(error => console.error('Error fetching data:', error));
     });
+
+
+
 
     function showResponseMessage(type, message) {
       responseMessage.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
