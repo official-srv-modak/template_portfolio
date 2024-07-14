@@ -4,6 +4,11 @@
   scroll-padding-top: 70px; /* Height of your fixed navbar */
 }
 
+
+:root {
+  scroll-padding-top: 70px; /* Height of your fixed navbar */
+}
+
 .timeline-card {
   position: relative;
   margin-left: 16px;
