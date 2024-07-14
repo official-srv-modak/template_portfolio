@@ -1,7 +1,8 @@
 {
-    "intro" : {
-        "name":"Kumar Aditya",
-        "profession":"DevOps Systems Engineer"
+    "imageAvatar": "images/reference-image-2.jpg",
+    "intro": {
+        "name": "Kumar Aditya",
+        "role": "DevOps Systems Engineer"
     },
     "aboutMe": "Hello! I’m Walter Patterson. I am passionate about UI/UX design and Web Design. I am a skilled front-end developer and master of graphic design tools such as Photoshop and Sketch. I am a quick learner and a team worker that gets the job done. I can easily capitalize on low hanging fruits and quickly maximize timely deliverables for real-time schemas.",
     "bio": {
@@ -12,9 +13,15 @@
         "Address": "Ontario, Canada"
     },
     "professionalSkills": {
-        "Platforms": ["Linux (RHEL 7/8, CentOS 7/8, Ubuntu), Windows Server/Client OS"],
-        "Source Control": ["Git, Bitbucket, Gitlab, Github"],
-        "Build Tools": ["Ant, Maven"]
+        "Platforms": [
+            "Linux (RHEL 7/8, CentOS 7/8, Ubuntu), Windows Server/Client OS"
+        ],
+        "Source Control": [
+            "Git, Bitbucket, Gitlab, Github"
+        ],
+        "Build Tools": [
+            "Ant, Maven"
+        ]
     },
     "workExperience": [
         {
@@ -55,5 +62,16 @@
             "date": "1995 - 2007",
             "description": "User generated content in real-time will have multiple touchpoints for offshoring. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment."
         }
-    ]
+    ],
+    "footerAddress": {
+        "Address": "528-31 Tretti Way, North York, Ontario M3H 0E3",
+        "Phone": "+1 437 602 9840",
+        "Email": "official.srv.modak@gmail.com"
+    },
+    "footerNavLink":{
+        "twitter":"https://twitter.com",
+        "facebook":"https://www.facebook.com",
+        "instagram":"https://www.linkedin.com/in/kadityasharma/",
+        "githib":"https://github.com/adityasharma1011"
+    }
 }
