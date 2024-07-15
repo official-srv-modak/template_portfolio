@@ -321,7 +321,7 @@ header {
 }
 
 .skills-table ul {
-  list-style-type: circle;
+  list-style-type: disc;
   margin: 0;
   padding-left: 20px;
 }
