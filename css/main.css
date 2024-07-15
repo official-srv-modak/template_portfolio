@@ -270,16 +270,6 @@ header {
   margin: auto; */
 }
 
-/* Custom styles here */
-header {
-  background-color: white;
-  padding: 10px 0;
-}
-
-.navbar-brand {
-  color: black !important;
-}
-
 .navbar-toggler {
   border: none;
   background-color: black;
@@ -300,9 +290,8 @@ header {
 .navbar-nav .nav-item {
   margin-left: 10px; /* Adjust spacing between navbar items */
 }
-
-.navbar-nav .nav-link {
-  color: black !important; /* Ensure nav links are black */
+.navbar{
+  background-color: black;
 }
 
 .skills-section {

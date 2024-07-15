@@ -31,37 +31,49 @@
 </head>
 
 <body class="bg-light" id="top">
-  <header class="d-print-none">
-    <div class="container text-center text-lg-left">
-      <div class="pt-4 clearfix">
-        <h1 class="site-title mb-0">Kumar Aditya</h1>
-        <div class="site-nav">
-          <nav role="navigation">
-            <ul class="nav justify-content-center">
-              <li class="nav-item"><a class="nav-link" href="#about" title="About"><span
-                    class="menu-title">About</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills"><span
-                    class="menu-title">Skills</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience"><span
-                    class="menu-title">Experience</span></a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#education" title="Education"><span
-                    class="menu-title">Education</span></a>
-              </li>
-              <!-- <li class="nav-item"><a class="nav-link" href="#portfolio" title="Portfolio"><span
-                    class="menu-title">Portfolio</span></a>
-              </li> -->
-              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"><span
-                    class="menu-title">Contact</span></a>
-              </li>
+  <header>
+    <div class="profile-page sidebar-collapse">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+          <a id="navbrandTitle" class="navbar-brand" href="#" rel="tooltip">Kumar Aditya</a>
+
+          <!-- Navbar Toggler Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse justify-content-end text-white" id="navigation">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link text-white" href="#about" title="About"
+                  onclick="closeNavbar()">About</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#skills" title="Skills"
+                  onclick="closeNavbar()">Skills</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#experience" title="Experience"
+                  onclick="closeNavbar()">Experience</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#education" title="Education"
+                  onclick="closeNavbar()">Education</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#contact" title="Contact"
+                  onclick="closeNavbar()">Contact</a></li>
             </ul>
-          </nav>
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
+
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Function to close the navbar when a link is clicked
+    function closeNavbar() {
+      $('.navbar-collapse').collapse('hide');
+    }
+  </script>Í
 
 
   <div class="page-content">
@@ -401,7 +413,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.ok) {
-            showResponseMessage('success', 'Message received successfully.');
+            showResponseMessage('success', 'Message sent successfully.');
             contactForm.reset(); // Optionally, clear the form after successful submission
           } else {
             showResponseMessage('error', 'Failed to send message. Please try again.');
@@ -433,7 +445,7 @@
               <li class="nav-item"><a class="nav-link" href="https://twitter.com" title="Twitter"><i
                     class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
               <li class="nav-item"><a class="nav-link" href="https://www.facebook.com" title="YouTube"><i
-                    class="fab fa-youtube"></i><span class="menu-title sr-only">Facebook</span></a></li>
+                    class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a></li>
               <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/kadityasharma/" title="L"><i
                     class="fab fa-linkedin"></i><span class="menu-title sr-only">Instagram</span></a></li>
               <li class="nav-item"><a class="nav-link" href="https://github.com/adityasharma1011" title="Github"><i
