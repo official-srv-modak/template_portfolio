@@ -31,66 +31,54 @@
 </head>
 
 <body class="bg-light" id="top">
-
-  <header>
-    <div class="profile-page sidebar-collapse">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" style="background-color: white;"
-        color-on-scroll="400">
-        <div class="container">
-          <a id="navbrandTitle" class="navbar-brand" href="#" rel="tooltip"></a>
-
-          <!-- Navbar Toggler Button -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <!-- No need for additional icon span -->
-          </button>
-
-          <!-- Navbar Links -->
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="#about" title="About" onclick="closeNavbar()">About</a>
+  <header class="d-print-none">
+    <div class="container text-center text-lg-left">
+      <div class="pt-4 clearfix">
+        <h1 class="site-title mb-0">Kumar Aditya</h1>
+        <div class="site-nav">
+          <nav role="navigation">
+            <ul class="nav justify-content-center">
+              <li class="nav-item"><a class="nav-link" href="#about" title="About"><span
+                    class="menu-title">About</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills" onclick="closeNavbar()">Skills</a>
+              <li class="nav-item"><a class="nav-link" href="#skills" title="Skills"><span
+                    class="menu-title">Skills</span></a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience"
-                  onclick="closeNavbar()">Experience</a></li>
-              <li class="nav-item"><a class="nav-link" href="#education" title="Education"
-                  onclick="closeNavbar()">Education</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"
-                  onclick="closeNavbar()">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#experience" title="Experience"><span
+                    class="menu-title">Experience</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#education" title="Education"><span
+                    class="menu-title">Education</span></a>
+              </li>
+              <!-- <li class="nav-item"><a class="nav-link" href="#portfolio" title="Portfolio"><span
+                    class="menu-title">Portfolio</span></a>
+              </li> -->
+              <li class="nav-item"><a class="nav-link" href="#contact" title="Contact"><span
+                    class="menu-title">Contact</span></a>
+              </li>
             </ul>
-          </div>
+          </nav>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
-
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // Function to close the navbar when a link is clicked
-    function closeNavbar() {
-      $('.navbar-collapse').collapse('hide');
-    }
-  </script>
-
 
 
   <div class="page-content">
     <div class="container">
       <div class="resume-container">
         <!-- Intro Section -->
-        <div class="shadow-1-strong bg-white my-5" id="intro">
+        <div class="shadow-1-strong bg-white my-2" id="intro">
           <div class="bg-info text-white">
             <div class="cover bg-image">
               <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
                 <div class="text-center p-5">
-                  <div class="avatar p-1">
-                  </div>
+                  <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="images/avatar.jpg" width="160"
+                      height="160" /></div>
                   <div class="header-bio mt-3">
-                    <div data-aos="zoom-in" data-aos-delay="0" id="introName">
+                    <div data-aos="zoom-in" data-aos-delay="0">
+                      <h2 class="h1">Kumar Aditya</h2>
+                      <p>DevOps Systems Engineer</p>
                     </div>
                     <div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
                       <nav role="navigation">
@@ -179,94 +167,6 @@
       fetch('resume.json')
         .then(response => response.json())
         .then(data => {
-
-          // Set document title
-          document.title = data.intro.name;
-
-
-          // Update text content of the navbar-brand element with id 'navbrandTitle'
-          var navbarBrand = document.getElementById('navbrandTitle');
-          if (navbarBrand) {
-            navbarBrand.textContent = data.intro.name;
-          }
-
-          // Select the div element with id 'footerAddress'
-          var footerAddressDiv = document.getElementById('footerAddress');
-
-          // Create and populate the card body with the address information
-          var cardBody = document.createElement('div');
-          cardBody.classList.add('card-body');
-
-          // Address
-          var addressTitle = document.createElement('p');
-          addressTitle.classList.add('mb-0');
-          addressTitle.innerHTML = '<strong>Address</strong>';
-          cardBody.appendChild(addressTitle);
-
-          var addressText = document.createElement('p');
-          addressText.classList.add('pb-2');
-          addressText.textContent = data.footerAddress.Address;
-          cardBody.appendChild(addressText);
-
-          // Phone
-          var phoneTitle = document.createElement('p');
-          phoneTitle.classList.add('mb-0');
-          phoneTitle.innerHTML = '<strong>Phone</strong>';
-          cardBody.appendChild(phoneTitle);
-
-          var phoneText = document.createElement('p');
-          phoneText.classList.add('pb-2');
-          phoneText.textContent = data.footerAddress.Phone;
-          cardBody.appendChild(phoneText);
-
-          // Email
-          var emailTitle = document.createElement('p');
-          emailTitle.classList.add('mb-0');
-          emailTitle.innerHTML = '<strong>Email</strong>';
-          cardBody.appendChild(emailTitle);
-
-          var emailText = document.createElement('p');
-          emailText.textContent = data.footerAddress.Email;
-          cardBody.appendChild(emailText);
-
-          // Append the card body to the footerAddressDiv
-          footerAddressDiv.appendChild(cardBody);
-
-          //////////////////////////////////////////
-
-          // Select the div element with class 'avatar'
-          var avatarDiv = document.querySelector('.avatar');
-
-          // Create an img element
-          var imgElement = document.createElement('img');
-
-          var imageUrl = data.imageAvatar;
-
-          // Set attributes for the img element
-          imgElement.setAttribute('src', imageUrl);
-          imgElement.setAttribute('width', '160');
-          imgElement.setAttribute('height', '160');
-          imgElement.classList.add('img-thumbnail', 'shadow-2-strong');
-          imgElement.setAttribute('id', 'avatarImage'); // Assigning id 'avatarImage' to the img element
-
-          // Append the img element to the avatar div
-          avatarDiv.appendChild(imgElement);
-
-          ////////////////////////////
-
-          // Select the div element with id 'introName'
-          var introDiv = document.getElementById('introName');
-
-          // Create and set the h2 element
-          var h2Element = document.createElement('h2');
-          h2Element.textContent = data.intro.name;
-          introDiv.appendChild(h2Element);
-
-          // Create and set the p element
-          var pElement = document.createElement('p');
-          pElement.textContent = data.intro.role;
-          introDiv.appendChild(pElement);
-
           // Populate About Me Section
           document.getElementById('aboutMeContent').textContent = data.aboutMe;
 
@@ -329,68 +229,6 @@
                     </div>`;
           });
           document.getElementById('educationContent').innerHTML = educationContent;
-
-          ///////////////////////////////////
-
-          // Select the div element with id 'footerNavLink'
-          var footerNavLinkDiv = document.getElementById('footerNavLink');
-
-          // Create navigation structure
-          var navElement = document.createElement('nav');
-          navElement.setAttribute('role', 'navigation');
-
-          var ulElement = document.createElement('ul');
-          ulElement.classList.add('nav', 'justify-content-center');
-
-          // Create Twitter link
-          var twitterLi = document.createElement('li');
-          twitterLi.classList.add('nav-item');
-          var twitterLink = document.createElement('a');
-          twitterLink.classList.add('nav-link');
-          twitterLink.setAttribute('href', data.footerNavLink.twitter);
-          twitterLink.setAttribute('title', 'Twitter');
-          twitterLink.innerHTML = '<i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span>';
-          twitterLi.appendChild(twitterLink);
-          ulElement.appendChild(twitterLi);
-
-          // Create Facebook link
-          var facebookLi = document.createElement('li');
-          facebookLi.classList.add('nav-item');
-          var facebookLink = document.createElement('a');
-          facebookLink.classList.add('nav-link');
-          facebookLink.setAttribute('href', data.footerNavLink.facebook);
-          facebookLink.setAttribute('title', 'Facebook');
-          facebookLink.innerHTML = '<i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span>';
-          facebookLi.appendChild(facebookLink);
-          ulElement.appendChild(facebookLi);
-
-          // Create Instagram link
-          var instagramLi = document.createElement('li');
-          instagramLi.classList.add('nav-item');
-          var instagramLink = document.createElement('a');
-          instagramLink.classList.add('nav-link');
-          instagramLink.setAttribute('href', data.footerNavLink.instagram);
-          instagramLink.setAttribute('title', 'Instagram');
-          instagramLink.innerHTML = '<i class="fab fa-linkedin"></i><span class="menu-title sr-only">Instagram</span>';
-          instagramLi.appendChild(instagramLink);
-          ulElement.appendChild(instagramLi);
-
-          // Create Github link
-          var githubLi = document.createElement('li');
-          githubLi.classList.add('nav-item');
-          var githubLink = document.createElement('a');
-          githubLink.classList.add('nav-link');
-          githubLink.setAttribute('href', data.footerNavLink.github);
-          githubLink.setAttribute('title', 'Github');
-          githubLink.innerHTML = '<i class="fab fa-github"></i><span class="menu-title sr-only">Github</span>';
-          githubLi.appendChild(githubLink);
-          ulElement.appendChild(githubLi);
-
-          // Append navigation structure to footerNavLinkDiv
-          navElement.appendChild(ulElement);
-          footerNavLinkDiv.appendChild(navElement);
-
-
         })
         .catch(error => console.error('Error fetching data:', error));
     });
@@ -404,8 +242,7 @@
         <div class="cc-contact">
           <div class="row justify-content-center">
             <div class="col-md-10">
-              <div class="card mb-0 shadow-1-strong bg-white" data-aos="zoom-in"
-                style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <div class="card mb-0" data-aos="zoom-in" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                 <div class="h4 text-center title bg-info text-white shadow-sm" style="padding: 20px 0;">Contact Me
                 </div>
                 <div class="row no-gutters">
@@ -466,14 +303,14 @@
                       <div id="responseMessage" class="mt-3"></div>
                     </div>
                   </div>
-                  <div class="col-md-6" style="padding: 10px; margin-top: 10px;" id="footerAddress">
-                    <div class="card-body">
-                      <!-- <p class="mb-0"><strong>Address</strong></p>
+                  <div class="col-md-6" style="padding: 10px; margin-top: 10px;">
+                    <div class="card-body" style="background-color: #f8f9fa; border-left: 1px solid #dee2e6;">
+                      <p class="mb-0"><strong>Address</strong></p>
                       <p class="pb-2">528-30 Tretti Way, North York, Ontario M3H 0E3</p>
                       <p class="mb-0"><strong>Phone</strong></p>
                       <p class="pb-2">+1 437 602 9840</p>
                       <p class="mb-0"><strong>Email</strong></p>
-                      <p>official.srv.modak@gmail.com</p> -->
+                      <p>official.srv.modak@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -489,45 +326,33 @@
     const contactForm = document.getElementById('contactForm');
     const responseMessage = document.getElementById('responseMessage');
 
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
 
-    document.addEventListener('DOMContentLoaded', function () {
-      fetch('resume.json')
+      const formData = new FormData(contactForm);
+      const formAction = 'https://formspree.io/f/meojqpkp'; // Replace with your form action URL
+
+      fetch(formAction, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      })
         .then(response => response.json())
-        .then(resumeData => {
-
-          contactForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const formData = new FormData(contactForm);
-            const formAction = resumeData.formLink;
-
-            fetch(formAction, {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json'
-              },
-              body: formData
-            })
-              .then(response => response.json())
-              .then(data => {
-                if (data.ok) {
-                  showResponseMessage('success', 'Message received successfully.');
-                  contactForm.reset(); // Optionally, clear the form after successful submission
-                } else {
-                  showResponseMessage('error', 'Failed to send message. Please try again.');
-                }
-              })
-              .catch(error => {
-                console.error('Error:', error);
-                showResponseMessage('error', 'An unexpected error occurred. Please try again later.');
-              });
-
-          });
-
-        }).catch(error => console.error('Error fetching data:', error));
+        .then(data => {
+          if (data.ok) {
+            showResponseMessage('success', 'Message received successfully.');
+            contactForm.reset(); // Optionally, clear the form after successful submission
+          } else {
+            showResponseMessage('error', 'Failed to send message. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showResponseMessage('error', 'An unexpected error occurred. Please try again later.');
+        });
     });
-
-
-
 
     function showResponseMessage(type, message) {
       responseMessage.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
@@ -543,8 +368,8 @@
     <div class="container">
       <div class="my-3">
         <div class="h4">Kumar Aditya</div>
-        <div class="footer-nav" id="footerNavLink">
-          <!-- <nav role="navigation">
+        <div class="footer-nav">
+          <nav role="navigation">
             <ul class="nav justify-content-center">
               <li class="nav-item"><a class="nav-link" href="https://twitter.com" title="Twitter"><i
                     class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
@@ -555,7 +380,7 @@
               <li class="nav-item"><a class="nav-link" href="https://github.com/adityasharma1011" title="Github"><i
                     class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a></li>
             </ul>
-          </nav> -->
+          </nav>
         </div>
       </div>
       <div class="text-small">
