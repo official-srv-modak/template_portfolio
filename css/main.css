@@ -266,6 +266,8 @@ header {
 
 .page-content {
   padding-top: 15px; /* Adjust padding to match height of fixed navbar */
+  /* width: 80%;
+  margin: auto; */
 }
 
 /* Custom styles here */
@@ -302,3 +304,44 @@ header {
 .navbar-nav .nav-link {
   color: black !important; /* Ensure nav links are black */
 }
+
+.skills-section {
+}
+
+.skills-table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.skills-table td {
+  padding: 8px;
+  border-right: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.skills-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.skills-table td:first-child {
+  width: 25%;
+}
+
+.skills-table td:last-child {
+  width: 75%;
+}
+
+.skills-table ul {
+  list-style-type: circle;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.skills-table tr:last-child td {
+  border-bottom: none;
+}
+
+.skills-table td:last-child {
+  border-right: none;
+}
+
