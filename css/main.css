@@ -196,7 +196,8 @@ footer a:not(.nav-link) {
   }
 
   .my-5.p-5 {
-    padding: 1.5rem 0 !important;
+    padding-top: 1.5rem 0 !important;
+
   }
 
   .about-section {
@@ -294,8 +295,6 @@ header {
   background-color: black;
 }
 
-.skills-section {
-}
 
 .skills-table {
   border-collapse: collapse;
